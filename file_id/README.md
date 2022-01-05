@@ -26,5 +26,6 @@ Prints the full absolute path of the file:
 /private/var/tmp/_bazel_<username>/<sha>/execroot/__main__/main.swift
 ```
 
-Root cause may be https://bugs.swift.org/browse/SR-15123
-A draft PR fixing the issue for rules_swift can be found in https://github.com/bazelbuild/rules_swift/pull/685
+See:
+* Root cause may be https://bugs.swift.org/browse/SR-15123
+* A draft PR fixing the issue for rules_swift can be found in https://github.com/bazelbuild/rules_swift/pull/685
