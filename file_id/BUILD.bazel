@@ -1,0 +1,20 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_binary")
+
+swift_binary(
+    name = "cli",
+    srcs = ["main.swift"],
+)
+
+XCODE_12_5_1 = "12_5_1_12E507"
+xcode_config(
+    name = "xcode_12_5_1",
+    default = "@local_config_xcode//:version" + XCODE_12_5_1,
+    versions = ["@local_config_xcode//:version" + XCODE_12_5_1],
+)
+
+XCODE_13_2_1 = "13_2_1_13C100"
+xcode_config(
+    name = "xcode_13_2_1",
+    default = "@local_config_xcode//:version" + XCODE_13_2_1,
+    versions = ["@local_config_xcode//:version" + XCODE_13_2_1],
+)

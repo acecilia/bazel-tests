@@ -1,0 +1,23 @@
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
+
+git_repository(
+    name = "build_bazel_rules_swift",
+    # This commit is the one before switching to bazel 5 in https://github.com/bazelbuild/rules_swift/commit/a53fbfa377daa16dc53628d91d58b4d200b49a72
+    commit = "de52db7eb205bef19598c123bd99be1c4d5b2cd2", 
+    remote = "https://github.com/bazelbuild/rules_swift.git",
+    shallow_since = "1637671874 -0600",
+)
+
+load(
+    "@build_bazel_rules_swift//swift:repositories.bzl",
+    "swift_rules_dependencies",
+)
+
+swift_rules_dependencies()
+
+load(
+    "@build_bazel_rules_swift//swift:extras.bzl",
+    "swift_rules_extra_dependencies",
+)
+
+swift_rules_extra_dependencies()
